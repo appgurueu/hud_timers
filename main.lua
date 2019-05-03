@@ -32,7 +32,7 @@ local config=conf.import("hud_timers",{
     }
 })
 
-table_ext.add_all(_G, config)
+table_ext.add_all(getfenv(1), config)
 
 minetest.register_on_joinplayer(function(player)
     timers[player:get_player_name()]={}
