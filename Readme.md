@@ -15,11 +15,15 @@ Depends on [`modlib`](https://github.com/appgurueu/modlib).
 
 **Please note that this mod may not work along well with other mods altering the HUD.**
 
-Code licensed under the MIT License. Media license depends on hudbars(media files from there). Written by Lars Mueller alias LMD or appguru(eu).
+Code licensed under the MIT License. Written by Lars Mueller alias LMD or appguru(eu).
+
+Media license: files taken or derived from [hudbars](https://repo.or.cz/w/minetest_hudbars.git)
+
+* `textures/hudbars_bar_background.png`: made by Wuzzy, licensed under MIT
+* `textures/hud_timers_bar_timeout.png`: made by LMD, but very similar, can be seen as derivative of Wuzzy's work, therefore licensed under MIT as well
+
+All in all, the media is licensed under the MIT license, with credits going to Wuzzy.
 
 ## API
 
 Code should be self-explanatory. If not, feel free to contact me (opening an issue is also fine). Will probably document it here at some point...
-
-## Credits
-Media(hudbar background & foreground) : Wuzzy - `hudbars` mod
