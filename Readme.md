@@ -1,11 +1,8 @@
 # HUD Timers(`hud_timers`)
-A library for easily maintaining hud timers.
 
-> Wait... How long does it take until I can fire that gun again ?
+A library for easily maintaining HUD timers.
 
-\- me, playing Minetest
-
-> Oh, look ! A tiny grey bar ! 3 secs...
+HUD timers are colorful yet subtle bars indicating some time consuming process.
 
 ## About
 
@@ -23,6 +20,10 @@ Media license: files taken or derived from [hudbars](https://repo.or.cz/w/minete
 * `textures/hud_timers_bar_timeout.png`: made by LMD, but very similar, can be seen as derivative of Wuzzy's work, therefore licensed under MIT as well
 
 All in all, the media is licensed under the MIT license, with credits going to Wuzzy.
+
+## Screenshot
+
+![Screenshot](screenshot.png)
 
 ## API
 
