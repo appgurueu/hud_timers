@@ -168,7 +168,7 @@ function maintain_timers(timers, dtime, player)
             player:hud_remove(timer.ids.bg)
             player:hud_remove(timer.ids.bar)
             player:hud_remove(timer.ids.label)
-            log.write(
+            modlib.log.write(
                 "hud_timers",
                 "Timer " ..
                     timer.name ..
