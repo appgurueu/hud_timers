@@ -85,7 +85,7 @@ function add_timer(playername, timer_definition)
         {
             hud_elem_type = "statbar",
             position = hud_pos,
-            size = "",
+            size = nil, -- intentionally set to nil
             text = "hudbars_bar_background.png",
             number = 2,
             alignment = {x = 1, y = 1},
@@ -97,7 +97,7 @@ function add_timer(playername, timer_definition)
         {
             hud_elem_type = "statbar",
             position = hud_pos,
-            size = "",
+            size = nil, -- intentionally set to nil
             text = "hud_timers_bar_timeout.png^[colorize:#" .. (timer_definition.color or "000000"),
             number = 160,
             alignment = {x = 1, y = 1},
@@ -109,7 +109,7 @@ function add_timer(playername, timer_definition)
         {
             hud_elem_type = "text",
             position = hud_pos,
-            size = "",
+            size = nil,
             text = string.format(
                 format,
                 timer_definition.name,
@@ -135,8 +135,7 @@ function add_timer(playername, timer_definition)
         on_complete = timer_definition.on_complete,
         on_event = timer_definition.on_event,
         rounding_steps = timer_definition.rounding_steps or 10,
-        ids = {bg = bg_id, bar = bar_id, label = text_id},
-        y_shift = 0
+        ids = {bg = bg_id, bar = bar_id, label = text_id}
     }
 
     table.insert(
@@ -190,12 +189,10 @@ function maintain_timers(timers, dtime, player)
             string.format(format, timer.name, modlib.number.round(timer.time_left, timer.rounding_steps))
         )
         player:hud_change(timer.ids.bar, "number", timer.time_left / timer.duration * 160)
-        if not (y_shift == 0) then
-            local y_offset = - (i-1) * 20
-            player:hud_change(timer.ids.bg, "offset", {x = 0, y = y_offset})
-            player:hud_change(timer.ids.bar, "offset", {x = 1, y = y_offset + 1})
-            player:hud_change(timer.ids.label, "offset", {x = 2, y = y_offset})
-        end
+        local y_offset = - (i-1) * 20
+        player:hud_change(timer.ids.bg, "offset", {x = 0, y = y_offset})
+        player:hud_change(timer.ids.bar, "offset", {x = 1, y = y_offset + 1})
+        player:hud_change(timer.ids.label, "offset", {x = 2, y = y_offset})
     end
 end
 
