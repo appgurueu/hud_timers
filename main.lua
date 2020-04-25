@@ -132,7 +132,8 @@ function add_timer(playername, timer_definition)
         name = timer_definition.name or "Unnamed Timer",
         time_left = timer_definition.duration,
         duration = timer_definition.duration,
-        on_complete = timer_definition.on_complete,
+        on_complete = timer_definition.on_complete or function() end,
+        on_remove = timer_definition.on_remove or function() end,
         on_event = timer_definition.on_event,
         rounding_steps = timer_definition.rounding_steps or 10,
         ids = {bg = bg_id, bar = bar_id, label = text_id}
@@ -175,8 +176,10 @@ function maintain_timers(timers, dtime, player)
                             timer.duration .. " removed from the HUD of player " .. player:get_player_name()
             )
             table.remove(timers, i)
-            if timer.on_complete then
+            if timer.time_left > 0 then
                 timer.on_complete(player:get_player_name(), timer)
+            else
+                timer.on_remove(player:get_player_name(), timer)
             end
         else
             timers[i].time_left = time_left
