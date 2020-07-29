@@ -1,1 +1,1 @@
-modlib.mod.init("hud_timers")
+modlib.mod.init()
