@@ -1,32 +1,6 @@
 timers = {}
 
-local config =
-    modlib.conf.import(
-    "hud_timers",
-    {
-        type = "table",
-        children = {
-            hud_timers_max = {
-                type = "number",
-                range = {0, 100}
-            },
-            hud_pos = {
-                type = "table",
-                children = {
-                    x = {type = "number"},
-                    y = {type = "number"}
-                }
-            },
-            globalstep = {
-                type = "number",
-                range = {0}
-            },
-            format = {
-                type = "string"
-            }
-        }
-    }
-)
+local config = modlib.mod.configuration()
 
 modlib.table.add_all(getfenv(1), config)
 

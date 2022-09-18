@@ -31,39 +31,32 @@ Code should be self-explanatory. If not, feel free to contact me (opening an iss
 
 ## Configuration
 
-### Locations
+<!--modlib:conf:2-->
+### `format`
 
-* JSON Configuration: `<worldpath>/config/hud_timers.json`
-* Text Logs: `<worldpath>/logs/hud_timers/<date>.txt`
-* Readme: `<modpath/gamepath>/hud_timers/Readme.md`
+The format for the timer label - first string is timer name, second one is seconds left.
 
-### Default Configuration
+* Type: string
+* Default: `%s: %s s`
 
-Located under `<modpath/gamepath>/hud_timers/default_config.json`
+### `globalstep`
 
-```json
-{
-  "hud_pos": {"x": 0,"y": 0},
-  "globalstep": 0.1,
-  "hud_timers_max": 10,
-  "format": "%s: %s s"
-}
-```
+How often timers should be updated (interval duration in seconds).
 
-### Usage
+* Type: number
+* Default: `0.1`
+* &gt;= `0`
 
-#### `hud_pos`
+### `hud_pos`
 
 Screen coordinates where the timer stack should start.
 
-#### `globalstep`
-
-How often timers should be updated(interval, seconds).
-
-#### `hud_timers_max`
+### `hud_timers_max`
 
 How many timers(maximum) may exist at a time.
 
-#### `format` : "%s : %s s"
-
-The format for the timer label - first string is timer name, second one is seconds left.
+* Type: number
+* Default: `10`
+* &gt;= `0`
+* &lt;= `100`
+<!--modlib:conf-->
